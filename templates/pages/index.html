@@ -1,15 +1,112 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>RT Las Palmas</title>
-    <style>
-        body {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>This site is under construction, please check back soon!</h1>
-</body>
+{% extends "base/site-base.html" %}
 
-</html>
+{% block body %}
+
+<section>
+    <!-- revolution slider -->
+    <div class="fullwidthbanner-container">
+        <div class="fullwidthbanner">
+            <ul>
+                {# Include slider contents #}
+                {% include "components/index-slider.html" %}
+            </ul>
+
+            <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+
+    <div class="row spacer20"></div>
+
+    <h2>RT Las Palmas</h2>
+    <p>Providing Exceptional Short and Long Term Stay Experiences.</p>
+
+    <h3>Locations</h3>
+
+      <h4>Short Term Stay Options</h4>
+        <p>RT Las Palmas provides Short Term housing options in the tourist capital of the Ozarks.</p>
+        <h5>Branson, Missouri</h5>
+          <p>Vacationeers can enjoy spectacular views of Table Rock Lake and close proximity to all of the shows offered in Branson. RT Las Palmas partners locally with <a href="http://bransontablerockoasis.com">Branson Tablerock Oasis</a></p>
+
+
+      <h4>Long Term Stay Options</h4>
+        <p>RT Las Palmas provides Long Term housing options in both Indiana and Florida.</p>
+          <h5>Indiana</h5>
+            <p>Near the <<i>Recreational Vehicle Manufactoring Capital of the World</i>, tenants live in upscale housing with views of Cobus Creek. RT Las Palmas partners locally with <a href="https://suretypm.com/">Surety Property Management</a></p>
+
+          <h5>Florida</h5>
+            <p>Just minutes from world-class ocean beaches, tenants enjoy inland water views in upscale townhouses. RT Las Palmas parterns locally with <a href="https://www.tampabaypropertyexperts.com/">Tampa Bay Property Experts</a></p>
+
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/javascript">
+        var tpj = jQuery;
+        tpj.noConflict();
+
+        tpj(document).ready(function () {
+
+            if (tpj.fn.cssOriginal != undefined)
+                tpj.fn.css = tpj.fn.cssOriginal;
+
+            tpj('.fullwidthbanner').revolution({
+                delay: 6000,
+                startwidth: 960,
+                startheight: 500,
+
+                onHoverStop: "off", // Stop Banner Timet at Hover on Slide on/off
+
+                thumbWidth: 100, // Thumb With and Height and Amount (only if navigation Tyope set to thumb !)
+                thumbHeight: 50,
+                thumbAmount: 3,
+
+                hideThumbs: 0,
+                navigationType: "none", // bullet, thumb, none
+                navigationArrows: "solo", // nexttobullets, solo (old name verticalcentered), none
+
+                navigationStyle: "round", // round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+
+
+                navigationHAlign: "center", // Vertical Align top,center,bottom
+                navigationVAlign: "bottom", // Horizontal Align left,center,right
+                navigationHOffset: 0,
+                navigationVOffset: 20,
+
+                soloArrowLeftHalign: "left",
+                soloArrowLeftValign: "center",
+                soloArrowLeftHOffset: 10,
+                soloArrowLeftVOffset: 0,
+
+                soloArrowRightHalign: "right",
+                soloArrowRightValign: "center",
+                soloArrowRightHOffset: 10,
+                soloArrowRightVOffset: 0,
+
+                touchenabled: "on", // Enable Swipe Function : on/off
+
+
+
+                stopAtSlide: -1, // Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+                stopAfterLoops: -1, // Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+
+                hideCaptionAtLimit: 0, // It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+                hideAllCaptionAtLilmit: 0, // Hide all The Captions if Width of Browser is less then this value
+                hideSliderAtLimit: 0, // Hide the whole slider, and stop also functions if Width of Browser is less than this value
+
+
+                fullWidth: "on",
+
+                shadow: 0 //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
+
+            });
+
+
+
+
+        });
+    </script>
+{% endblock %}
