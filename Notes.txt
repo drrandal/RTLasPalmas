@@ -1,0 +1,27 @@
+Open Terminal
+
+	workon FCCWebsite
+
+Get the latest version
+
+	git pull
+
+After making some changes or to see the current site
+
+	python build.py
+
+When ready to commit, check if any new files need to be added
+
+	git status
+
+Add any new files as listed in `status`
+
+	git add <file>
+
+To commit
+
+	git commit -am '<message>'
+
+To push to GitHub
+
+	git push origin master

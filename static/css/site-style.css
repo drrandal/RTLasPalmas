@@ -1,0 +1,14 @@
+.social-icon-main.social-text {
+    font-size: 20px;
+}
+
+.our-team-social i.rightmost-icon {
+    margin-right: 0px;
+}
+.our-team-social i {
+    margin-bottom: 0px;
+}
+
+.photo-gallery .project-item-isotope .project-text {
+  padding: 5px 10px 0px 10px;
+}
